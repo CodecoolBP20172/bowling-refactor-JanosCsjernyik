@@ -30,11 +30,12 @@ def score(game):
 
 
 def get_value(char):
-    if char in ['1', '2', '3', '4', '5', '6', '7', '8', '9']:
+    try:
         return int(char)
-    elif char in ['X', 'x', '/']:
-        return 10
-    elif char == '-':
-        return 0
-    else:
-        raise ValueError()
+    except:
+        if char in ['X', 'x', '/']:
+            return 10
+        elif char == '-':
+            return 0
+        else:
+            raise ValueError()
